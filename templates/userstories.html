@@ -1,0 +1,480 @@
+<table id="proman-backlog">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Story Title</th>
+            <th style="min-width: 300px;">User Story</th>
+            <th style="min-width: 400px;">Acceptance Criteria</th>
+            <th>Business Value</th>
+            <th>Depends on</th>
+            <th>Duplicates</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th style="background-color: green">1</th>
+            <td>Development</td>
+            <td>Create a development environment</td>
+            <td>
+                <p>As a Developer,</p>
+                <p>I want to have an environment, where a web-server serves a static HTML,</p>
+                <p>So that I can avoid issues with running JavaScript locally in a sandboxed environment.</p>
+            </td>
+            <td>
+                <p>
+                    Given I start up the application server,</p>
+                <p>When I open localhost on the port it's running in my browser,</p>
+                <p>Then ensure the server gives back a valid (empty HTML) response.</p>
+            </td>
+            <td style="text-align:center;">&nbsp;</td>
+            <td style="text-align:center;">-</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">2</th>
+            <td>Boards</td>
+            <td>List page</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to have an overview of already created Boards,</p>
+                <p>So that I can categorise my Cards underneath them later on.</p>
+            </td>
+            <td>
+                <p>
+                    Given my application server is started,</p>
+                <p>When I open the root url (/),</p>
+                <p>Then ensure I can see a list of my already created boards.</p>
+            </td>
+            <td style="text-align:center;">1000</td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <td>Boards</td>
+            <td>Create public Board</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to add a new public Board,</p>
+                <p>So I can store Cards on it later.</p>
+            </td>
+            <td>
+                <p>
+                    Given my application server is started,</p>
+                <p>When I open the root url (/),</p>
+                <p>Then ensure that there's a "Create new board" button,</p>
+                <p>And ensure if I click on it, I can give my new Board's title in an editable field,</p>
+                <p>And ensure if I press save, my Board title gets saved,</p>
+                <p>And ensure if I click out from the input or press Esc, the original Board title returns,</p>
+                <p>And ensure if I reload the page, my Board is still display the updated title.</p>
+            </td>
+            <td style="text-align:center;">400</td>
+            <td style="text-align:center;">1, 2</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">4</th>
+            <td>Boards</td>
+            <td>Rename Board</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to change the title of any Boards.</p>
+            </td>
+            <td>
+                <p>
+                    Given I’m on the Boards list page,</p>
+                <p>And there is a Board saved in the system,</p>
+                <p>When I click on it’s name,</p>
+                <p>Then ensure the name changes to an input box,</p>
+                <p>And ensure if I click on it, I can give my new Board's title,</p>
+                <p>And ensure if I press save, my Board gets saved,</p>
+                <p>And ensure it gets displayed in my Board list,</p>
+                <p>And ensure if I reload the page, my Board is still displayed</p>
+            </td>
+            <td style="text-align:center;">200</td>
+            <td style="text-align:center;">1, 2</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">5</th>
+            <td>Boards</td>
+            <td>Static columns</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to open a Board,</p>
+                <p>So I see 4 fix columns.</p>
+            </td>
+            <td>
+                <p>Given I’m on the Boards list page,</p>
+                <p>And there is a Board saved in the system,</p>
+                <p>When I click on it,</p>
+                <p>Then ensure I get 4 columns (New, In progress, Testing, Done), as status of Cards,</p>
+                <p>And ensure I can still see the Board's title on the top,</p>
+                <p>And ensure if I click the Board title again, this Board closes.</p>
+            </td>
+            <td style="text-align:center;">300</td>
+            <td style="text-align:center;">1, 2</td>
+            <td style="text-align:center;">6</td>
+        </tr>
+        <tr>
+            <th>6</th>
+            <td>Boards</td>
+            <td>Dynamic columns</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to open a Board,</p>
+                <p>And I want to create any number of columns on the board,</p>
+                <p>So I see those columns and I can use them a statuses for Cards.</p>
+            </td>
+            <td>
+                <p>Given I’m on the Boards list page,</p>
+                <p>And there is a Board saved in the system,</p>
+                <p>When I click on it,</p>
+                <p>Then ensure there is a button “Add new Column”,</p>
+                <p>And ensure, when I click it, a new column gets added to the Board with the title I choose, so I can use
+                    it as a status of Cards,</p>
+                <p>And ensure I can still see the Board's title on the top,</p>
+                <p>And ensure if I click the Board title again, this Board closes.</p>
+            </td>
+            <td style="text-align:center;">900</td>
+            <td style="text-align:center;">1, 2</td>
+            <td style="text-align:center;">5</td>
+        </tr>
+        <tr>
+            <th>7</th>
+            <td>Boards</td>
+            <td>Rename Column</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to change the title of a Column.</p>
+            </td>
+            <td>
+                <p>Given I’m on the Boards list page,</p>
+                <p>And there is a Board saved in the system, that has columns (static or dynamic),</p>
+                <p>When I click the title of the Column,</p>
+                <p>Then ensure the title text changes to an editable field,</p>
+                <p>And ensure if I press Enter, my Column title gets saved,</p>
+                <p>And ensure if I click out from the editable area or press Esc, the original Column title returns,</p>
+                <p>And ensure if I reload the page, my Column is still display the updated title.</p>
+            </td>
+            <td style="text-align:center;">200</td>
+            <td style="text-align:center;">1, 2, 5/6</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">8</th>
+            <td>Cards</td>
+            <td>Create Card</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to add a new Card to a Board,</p>
+                <p>So I can manage it later with future features.</p>
+            </td>
+            <td>
+                <p>Given I’m on the Boards list page,</p>
+                <p>And there is a Board saved in the system,</p>
+                <p>And I opened a Board,</p>
+                <p>Then ensure that there's a "Create new Card" button,</p>
+                <p>And ensure if I click on it, I can create a new Card,</p>
+                <p>And ensure if I press save, my Card gets saved,</p>
+                <p>And ensure it gets displayed in the first column of the Board,</p>
+                <p>And ensure if I reload the page, my Card is still displayed on the same place.</p>
+            </td>
+            <td style="text-align:center;">700</td>
+            <td style="text-align:center;">1, 2, 5/6</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">9</th>
+            <td>Cards</td>
+            <td>Order</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to have a kept order between my cards,</p>
+                <p>So I can set the priority between them.</p>
+            </td>
+            <td>
+                <p>Given I’m on the Boards list page,</p>
+                <p>And there is a Board and multiple Cards saved in the system,</p>
+                <p>When I drag a Card to above or below another Card,</p>
+                <p>Then ensure the Card stays in the new position when I drop it,</p>
+                <p>And when I refresh the page,</p>
+                <p>Then ensure the order of the Cards are the updated, new order.</p>
+            </td>
+            <td style="text-align:center;">600</td>
+            <td style="text-align:center;">1, 2, 5/6</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">10</th>
+            <td>Cards</td>
+            <td>Change status</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to have statuses for my cards, represented by static/dynamic columns,</p>
+                <p>So that I can set the progress of the Cards.</p>
+            </td>
+            <td>
+                <p>Given I’m on the Boards list page,</p>
+                <p>And there is a Board and a Card saved in the system,</p>
+                <p>And ensure I can drag and drop a Card from one column to another,</p>
+                <p>Then ensure the Cards are the updated status.</p>
+            </td>
+            <td style="text-align:center;">600</td>
+            <td style="text-align:center;">1, 2, 5/6</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th>11</th>
+            <td>Cards</td>
+            <td>Edit title</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to edit my already created cards' title,</p>
+                <p>So that I can update them when needed.</p>
+            </td>
+            <td>
+                <p>Given I’m on the Boards list page,</p>
+                <p>And there is a Board and a Card saved in the system,</p>
+                <p>When I click the title of the Card,</p>
+                <p>Then ensure the title text changes to an editable field,</p>
+                <p>And ensure if I press Enter, my Card title gets saved,</p>
+                <p>And ensure if I click out from the editable area or press Esc, the original Card title returns,</p>
+                <p>And ensure if I reload the page, this Card is still display the updated title.</p>
+            </td>
+            <td style="text-align:center;">400</td>
+            <td style="text-align:center;">1, 2, 5/6</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th>12</th>
+            <td>Development</td>
+            <td>Offline</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to be reach the application as a PWA (Progressive Web App)</p>
+                <p>So I can access my boards and cards offline in the future, like in a native application.</p>
+            </td>
+            <td>
+                <p>Given my application server is started,</p>
+                <p>When I open the root url (/) on a mobile phone,</p>
+                <p>Then ensure I have the opportunity to save the web-page as a mobile application,</p>
+                <p>And ensure I can open it as a mobile application,</p>
+                <p>And ensure I can open it as a mobile application when I’m offline.</p>
+            </td>
+            <td style="text-align:center;">900</td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">13</th>
+            <td>Authentication</td>
+            <td>User registration</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to register a new account into the application,</p>
+                <p>So I can access user related data later.</p>
+            </td>
+            <td>
+                <p>Given my application server is started,</p>
+                <p>When I open the root url (/),</p>
+                <p>Then ensure that there is a register link on the page,</p>
+                <p>And ensure if I click on it, I see a registration page with a form where I can input my chosen username
+                    and password,</p>
+                <p>And ensure if I click on the submit button, my username and password gets stored so I can login with
+                    these later.</p>
+            </td>
+            <td style="text-align:center;">700</td>
+            <td style="text-align:center;">1</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">14</th>
+            <td>Authentication</td>
+            <td>User login</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to login into the application with my username and password,</p>
+                <p>So the application can identify who am I.</p>
+            </td>
+            <td>
+                <p>Given my application server is started,</p>
+                <p>When I open the root url (/),</p>
+                <p>And I haven't logged in already with my username and password,</p>
+                <p>Then ensure that there is a “Login” button in the header,</p>
+                <p>And when I click this button I see a login page where I can login with my username and password,</p>
+                <p>And ensure if I enter the correct username and password then I see the the Boards' list page with public
+                    (and my previously created private) Boards.</p>
+            </td>
+            <td style="text-align:center;">700</td>
+            <td style="text-align:center;">1, 13</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">15</th>
+            <td>Authentication</td>
+            <td>Private Boards</td>
+            <td>
+                <p>As a User,</p>
+                <p>I’d like to be able to create private Boards, which is only visible for me,</p>
+                <p>So I can store private Cards on these Boards.</p>
+            </td>
+            <td>
+                <p>Given I’m logged in,</p>
+                <p>Then ensure that there's a "Create new private board" button,</p>
+                <p>When I click on it, I can give my new private Board's title in an editable field,</p>
+                <p>Then ensure if I press save, my Board title gets saved,</p>
+                <p>And ensure if I click out from the input or press Esc, the original Board title returns,</p>
+                <p>And ensure if I reload the page, my Board is still display the updated title,</p>
+                <p>And ensure if I logout, I can not see this Board,</p>
+                <p>And ensure if I login with another account, I can not see this Board.</p>
+            </td>
+            <td style="text-align:center;">900</td>
+            <td style="text-align:center;">1, 13, 14</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">16</th>
+            <td>Authentication</td>
+            <td>User logout</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to be able to easily logout from the application,So my account can be locked and no-one can reach it, but me.</p>
+            </td>
+            <td>
+                <p>Given I’m logged in,</p>
+                <p>Then ensure that there is a Logout link,</p>
+                <p>And ensure if I click on it, I will be logged out of the application and see the Login button,</p>
+                <p>And ensure I can only see public Boards.</p>
+            </td>
+            <td style="text-align:center;">700</td>
+            <td style="text-align:center;">1, 13, 14</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th>17</th>
+            <td>Boards</td>
+            <td>Delete public Boards</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to delete the existing public Boards with its' cards as well.</p>
+            </td>
+            <td>
+                <p>Given I’m logged in,</p>
+                <p>When I click on the delete icon associated with a public Board,</p>
+                <p>Then ensure that the Board get deleted,</p>
+                <p>And ensure that the Cards associated with the Board get deleted,</p>
+                <p>And ensure that this situation persist if I reload the page.</p>
+            </td>
+            <td style="text-align:center;">300</td>
+            <td style="text-align:center;">1, 2</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">18</th>
+            <td>Boards</td>
+            <td>Delete private Boards</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to delete the existing private Boards with its' cards as well.</p>
+            </td>
+            <td>
+                <p>Given I’m logged in,</p>
+                <p>When I click on the delete icon associated with a private Board,</p>
+                <p>Then ensure that the Board get deleted,</p>
+                <p>And ensure that the Cards associated with the Board get deleted,</p>
+                <p>And ensure that this situation persist if I reload the page.</p>
+            </td>
+            <td style="text-align:center;">600</td>
+            <td style="text-align:center;">1, 2, 13, 14, 15</td>
+            <td style="text-align:center;">-</td>
+        </tr>
+        <tr>
+            <th style="background-color: green">19</th>
+            <td>Cards</td>
+            <td>Delete</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to delete my existing cards.</p>
+            </td>
+            <td>
+                <p>Given I’m on the Boards list page,</p>
+                <p>And there is a Board and a Card saved in the system,</p>
+                <p>And I open the Board,</p>
+                <p>When I click on the delete icon associated with the Card,</p>
+                <p>Then ensure that the Card gets deleted,</p>
+                <p>And ensure that this situation persist if I reload the page.</p>
+            </td>
+            <td style="text-align:center;">400</td>
+            <td style="text-align:center;">1, 2, 5/6</td>
+            <td style="text-align:center;">20</td>
+        </tr>
+        <tr>
+            <th>20</th>
+            <td>Cards</td>
+            <td>Archive</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to delete my existing cards,</p>
+                <p>So I can restore then, if I want.</p>
+            </td>
+            <td>
+                <p>Given I’m on the Boards list page,</p>
+                <p>And there is a Board and a Card saved in the system,</p>
+                <p>And I open the Board,</p>
+                <p>When I click on the archive icon associated with the Card,</p>
+                <p>Then ensure that the Card gets archived,</p>
+                <p>And ensure that this situation persist if I reload the page,</p>
+                <p>And ensure there is a ‘Archived Cards’ button on the Board,</p>
+                <p>And when I click it, I open up the list of archived Cards,</p>
+                <p>And ensure there is a ‘Unarchive Card’ button/icon on the archived cards,</p>
+                <p>And ensure when I click it, it goes back to its original status/Column,</p>
+                <p>And ensure that this situation persist if I reload the page,</p>
+            </td>
+            <td style="text-align:center;">800</td>
+            <td style="text-align:center;">1, 2, 5/6</td>
+            <td style="text-align:center;">19</td>
+        </tr>
+        <tr>
+            <th>21</th>
+            <td>Development</td>
+            <td>Manual Sync</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to see edits on Boards and Cards made on public Boards with other users by the press of a button,</p>
+                <p>So we can collaborate easier.</p>
+            </td>
+            <td>
+                <p>Given I’m on the Boards list page,</p>
+                <p>And there is a Board and a Card saved in the system,</p>
+                <p>And another user makes a change on any public Board or its Cards,</p>
+                <p>And ensure there is a “Refresh” button on the page,</p>
+                <p>When I click it,</p>
+                <p>Then ensure all the Boards and Cards get refreshed.</p>
+            </td>
+            <td style="text-align:center;">300</td>
+            <td style="text-align:center;">1, 2, 5/6, 9/10</td>
+            <td style="text-align:center;">22</td>
+        </tr>
+        <tr>
+            <th>22</th>
+            <td>Development</td>
+            <td>Live Sync</td>
+            <td>
+                <p>As a User,</p>
+                <p>I want to see edits on Boards and Cards made on public Boards at the same time with other users,</p>
+                <p>So we can collaborate easier.</p>
+            </td>
+            <td>
+                <p>Given I’m on the Boards list page,</p>
+                <p>And there is a Board and a Card saved in the system,</p>
+                <p>When another user makes a change on any public Board or its Cards,</p>
+                <p>Then ensure all the Boards and Cards get refreshed for all active users automatically.</p>
+            </td>
+            <td style="text-align:center;">900</td>
+            <td style="text-align:center;">1, 2, 5/6, 9/10</td>
+            <td style="text-align:center;">21</td>
+        </tr>
+    </tbody>
+</table>
